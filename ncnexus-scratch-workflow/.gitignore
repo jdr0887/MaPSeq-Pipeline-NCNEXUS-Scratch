@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings
+target
+tmp
+var
+src/main/resources/edu/unc/mapseq/workflow/ncnexus/scratch/workflow.properties

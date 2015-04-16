@@ -1,0 +1,15 @@
+<features name="mapseq-pipeline-ncnexus-scratch-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0">
+
+  <feature name="mapseq-pipeline-ncnexus-scratch" version="${project.version}" resolver="(obr)">
+    <bundle>mvn:edu.unc.mapseq.pipelines.ncnexus-scratch/ncnexus-scratch-workflow/${project.version}</bundle>
+    <bundle>mvn:edu.unc.mapseq.pipelines.ncnexus-scratch/ncnexus-scratch-commands/${project.version}</bundle>
+    <bundle start-level="100">mvn:edu.unc.mapseq.pipelines.ncnexus-scratch/ncnexus-scratch-executor/${project.version}</bundle>
+    <bundle start-level="100">mvn:edu.unc.mapseq.pipelines.ncnexus-scratch/ncnexus-scratch-messaging/${project.version}</bundle>
+  </feature>
+
+</features>
+
+
+
+
+
