@@ -275,6 +275,7 @@ public class NCNEXUSScratchWorkflow extends AbstractSampleWorkflow {
                 CondorJob dedupedBamJob = builder.build();
                 logger.info(dedupedBamJob.toString());
                 graph.addVertex(dedupedBamJob);
+                graph.addEdge(samtoolsIndexJob, dedupedBamJob);
 
                 // index job
                 builder = WorkflowJobFactory
