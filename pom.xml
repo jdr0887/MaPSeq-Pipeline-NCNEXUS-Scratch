@@ -31,8 +31,23 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+	<groupId>org.renci</groupId>
+	<artifactId>vcf-parser</artifactId>
+      	<version>0.0.3</version>
+      </dependency>
+      <dependency>
       	<groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
       	<artifactId>ncnexus-scratch-workflow</artifactId>
+      	<version>0.0.4-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+      	<groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
+      	<artifactId>ncnexus-scratch-ws-api</artifactId>
+      	<version>0.0.4-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+	<groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
+	<artifactId>ncnexus-scratch-commons</artifactId>
       	<version>0.0.4-SNAPSHOT</version>
       </dependency>
     </dependencies>
@@ -43,5 +58,8 @@
     <module>ncnexus-scratch-commands</module>
     <module>ncnexus-scratch-features</module>
     <module>ncnexus-scratch-messaging</module>
+    <module>ncnexus-scratch-commons</module>
+    <module>ncnexus-scratch-ws-api</module>
+    <module>ncnexus-scratch-ws-impl</module>
   </modules>
 </project>
