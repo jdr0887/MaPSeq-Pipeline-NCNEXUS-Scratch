@@ -2,13 +2,13 @@
   <parent>
     <groupId>edu.unc.mapseq.pipelines</groupId>
     <artifactId>ncnexus-scratch</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
   </parent>
   <name>MaPSeq :: Pipelines :: NCNEXUS Scratch :: Web Service API</name>
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
   <artifactId>ncnexus-scratch-ws-api</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.4</version>
   <packaging>bundle</packaging>
   <dependencies>
     <dependency>
