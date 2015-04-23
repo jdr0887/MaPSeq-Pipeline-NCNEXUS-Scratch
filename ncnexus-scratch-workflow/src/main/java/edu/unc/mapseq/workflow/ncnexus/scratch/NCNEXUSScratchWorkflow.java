@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.apache.commons.lang.StringUtils;
 import org.jgrapht.DirectedGraph;
@@ -15,6 +17,8 @@ import org.renci.jlrm.condor.CondorJobEdge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import edu.unc.mapseq.commons.ncnexus.scratch.SaveDepthOfCoverageAttributesRunnable;
+import edu.unc.mapseq.commons.ncnexus.scratch.SaveFlagstatAttributesRunnable;
 import edu.unc.mapseq.dao.model.Flowcell;
 import edu.unc.mapseq.dao.model.Sample;
 import edu.unc.mapseq.dao.model.WorkflowRunAttempt;
@@ -359,6 +363,34 @@ public class NCNEXUSScratchWorkflow extends AbstractSampleWorkflow {
         }
 
         return graph;
+    }
+
+    @Override
+    public void postRun() throws WorkflowException {
+        super.postRun();
+
+        Set<Sample> sampleSet = getAggregatedSamples();
+
+        for (Sample sample : sampleSet) {
+
+            if ("Undetermined".equals(sample.getBarcode())) {
+                continue;
+            }
+
+            ExecutorService es = Executors.newSingleThreadExecutor();
+
+            SaveFlagstatAttributesRunnable flagstatRunnable = new SaveFlagstatAttributesRunnable();
+            flagstatRunnable.setMapseqDAOBean(getWorkflowBeanService().getMaPSeqDAOBean());
+            flagstatRunnable.setSampleId(sample.getId());
+            es.execute(flagstatRunnable);
+
+            SaveDepthOfCoverageAttributesRunnable docRunnable = new SaveDepthOfCoverageAttributesRunnable();
+            docRunnable.setMapseqDAOBean(getWorkflowBeanService().getMaPSeqDAOBean());
+            docRunnable.setSampleId(sample.getId());
+            es.execute(docRunnable);
+
+        }
+
     }
 
 }
