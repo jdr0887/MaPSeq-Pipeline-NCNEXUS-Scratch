@@ -8,6 +8,16 @@
         <property name="maPSeqConfigurationService" ref="maPSeqConfigurationService" />
       </action>
     </command>
+    <command>
+      <action class="edu.unc.mapseq.commands.ncnexus.scratch.SaveDepthOfCoverageAttributesAction">
+        <property name="maPSeqDAOBean" ref="maPSeqDAOBean" />
+      </action>
+    </command>
+    <command>
+      <action class="edu.unc.mapseq.commands.ncnexus.scratch.SaveFlagstatAttributesAction">
+        <property name="maPSeqDAOBean" ref="maPSeqDAOBean" />
+      </action>
+    </command>
   </command-bundle>
 
   <reference id="maPSeqConfigurationService" interface="edu.unc.mapseq.config.MaPSeqConfigurationService" />
