@@ -23,6 +23,10 @@
       <groupId>edu.unc.mapseq.distribution</groupId>
       <artifactId>mapseq-modules</artifactId>
     </dependency>
+    <dependency>
+      <groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
+      <artifactId>ncnexus-scratch-commons</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

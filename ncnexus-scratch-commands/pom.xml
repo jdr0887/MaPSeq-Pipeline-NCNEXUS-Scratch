@@ -74,6 +74,10 @@
       <artifactId>slf4j-simple</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>edu.unc.mapseq.pipelines.ncnexus-scratch</groupId>
+      <artifactId>ncnexus-scratch-commons</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
